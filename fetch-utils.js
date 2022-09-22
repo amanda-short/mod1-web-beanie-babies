@@ -8,7 +8,7 @@ const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 export async function getBeanies(title, astroSign) {
     let query = client
         .from('beanie_babies')
-        .select('*')
+        .select('*', { count: 'exact' })
         .order('title')
         .limit(100);
 

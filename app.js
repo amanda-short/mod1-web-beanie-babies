@@ -13,6 +13,7 @@ const searchForm = document.getElementById('search-form');
 let error = null;
 let beanies = [];
 let astroSigns = [];
+let count = 0;
 
 
 /* Events */
@@ -36,6 +37,7 @@ async function findBeanies(title, astroSign) {
 
     error = response.error;
     beanies = response.data;
+    count = response.count;
 
     displayNotifications();
     if (!error) {
@@ -65,7 +67,7 @@ function displayNotifications() {
         notificationDisplay.textContent = error.message;
     } else {
         notificationDisplay.classList.remove('error');
-        notificationDisplay.textContent = `Showing ${beanies.length} Beanie Babies`;
+        notificationDisplay.textContent = `Showing ${beanies.length} of ${count} Beanie Babies`;
     }
 }    
 
