@@ -1,3 +1,10 @@
+export function renderSignOption(sign) {
+    const option = document.createElement('option');
+    option.value = sign.name;
+    option.textContent = sign.name;
+    return option;
+}
+
 export function renderBeanies(beanies) {
     const li = document.createElement('li');
     li.classList.add('card');

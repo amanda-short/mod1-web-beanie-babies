@@ -1,6 +1,7 @@
 /* Imports */
 import { getBeanies } from './fetch-utils.js';
-import { renderBeanies } from './render.utils.js';
+import { renderSignOption, renderBeanies } from './render.utils.js';
+
 
 /* Get DOM Elements */
 const notificationDisplay = document.getElementById('notification-display');
@@ -50,3 +51,4 @@ function displayNotifications() {
     }
 }    
 // (don't forget to call any display functions you want to run on page load!)
+displayBeanies();
