@@ -12,15 +12,20 @@ export async function getBeanies(title, astroSign) {
         .order('title')
         .limit(100);
 
+    if (title) {
+        query = query.ilike('title', `%${title}%`);
+    }
+    if (astroSign) {
+        query = query.eq('astroSign', astroSign);
+    }
+
     const response = await query;
 
     return response;
 }
 
 export async function getAstroSigns() {
-    const response = await client
-        .from('beanie_baby_astro_signs')
-        .select();
+    const response = await client.from('beanie_baby_astro_signs').select();
 
     return response;
 }
