@@ -12,7 +12,9 @@
     <link rel="icon" type="image/x-icon" href="assets/alchemy-favicon.png" />
 
     <!-- js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script type="module" src="app.js"></script>
+    
 
     <!-- fonts -->
     <!-- see https://fonts.google.com/ -->
@@ -26,12 +28,29 @@
 
 <body>
     <header>
-        <img class="logo" src="assets/html_css_js.png" alt="logo">
-        <h1>Web App</h1>
+        <h1>
+
+        </h1>
     </header>
 
     <main>
+        <section class="search">
+            <form id="search-form">
+                <input name="title" placeholder="Search Name">
+                <select id="astro-select" name="astroSign">
+                    <option value="">Astrology Sign</option>
+                </select>
+                <button>🔍</button>
+            </form>
 
+            <p id="notification-display">
+                Find your next beanie!
+            </p>
+        </section>
+
+        <ul class="list" id="beanie-list">
+
+        </ul>
     </main>
 
 </body>
