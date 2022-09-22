@@ -1,25 +1,38 @@
-export function renderSignOption(sign) {
-    const option = document.createElement('option');
-    option.value = sign.name;
-    option.textContent = sign.name;
-    return option;
-}
-
-export function renderBeanies(beanies) {
+export function renderBeanie(beanie) {
     const li = document.createElement('li');
     li.classList.add('card');
 
-    // const img = document.createElement('img');
-    // img.src = `https://flagcdn.com/72x54/${country.iso2.toLowerCase()}.png`;
-    // img.alt = country.name;
+    const img = document.createElement('img');
+    img.src = beanie.image;
+    img.alt = beanie.title;
+
+    const content = document.createElement('div');
+    content.classList.add('content');
 
     const h2 = document.createElement('h2');
-    h2.textContent = beanies.name;
+    h2.textContent = beanie.title;
 
-    const p = document.createElement('p');
-    p.textContent = beanies;
+    const attributes = document.createElement('p');
+    attributes.classList.add('attributes');
 
-    li.append(h2, img, p);
+    const animal = document.createElement('span');
+    animal.textContent = beanie.animal;
+
+    const subtheme = document.createElement('span');
+    subtheme.textContent = beanie.subtheme;
+
+    const astroSign = document.createElement('span');
+    astroSign.textContent = beanie.astroSign;
+
+    attributes.append(animal, subtheme, astroSign);
+
+    const released = document.createElement('p');
+    released.classList.add('released');
+    released.textContent = `Released ${beanie.releaseYear}`;
+
+    content.append(h2, attributes, released);
+
+    li.append(img, content);
 
     return li;
 }
