@@ -26,7 +26,6 @@ window.addEventListener('load', async () => {
     astroSigns = response.data;
 
     if (!error) {
-        console.log('no error');
         displayAstroSignOptions();
     }
 
